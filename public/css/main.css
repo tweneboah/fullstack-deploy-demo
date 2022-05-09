@@ -1,0 +1,302 @@
+/* rerset browser default styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: "Roboto", sans-serif;
+}
+
+/* navbar css */
+.navbar-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* remove all bullets */
+ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* style the logo */
+.logo i {
+  color: rgb(4, 190, 72);
+  font-size: 2.5em;
+}
+
+/* remove all text decoration */
+ul li a {
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.toggle {
+  display: none;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+}
+
+.login button {
+  color: rgb(252, 250, 250);
+  padding: 10px;
+  cursor: pointer;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 5px;
+  background-color: rgb(32, 131, 2);
+  border: none;
+}
+.login button:hover {
+  color: #fff;
+  background: rebeccapurple;
+}
+
+.register button:hover {
+  color: #fff;
+  background: rebeccapurple;
+}
+
+.register button {
+  color: rgb(252, 250, 250);
+  padding: 10px;
+  cursor: pointer;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 5px;
+  background-color: rgb(230, 3, 3);
+  border: none;
+}
+
+/* hero banner */
+header.container {
+  background-image: url("../images/header.jpg");
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #e5e5e5;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header.container button {
+  background: rgb(299, 2, 2);
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  color: rgb(243, 237, 237);
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 20px;
+}
+
+header.container button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+header.container h1 {
+  font-size: 5.5em;
+  font-weight: 600;
+  color: rgba(58, 1, 41, 0.977);
+  margin: 20px;
+  font-family: "Beau Rivage", cursive;
+}
+
+header.container p {
+  font-size: 20px;
+  font-weight: 200;
+  color: #000;
+  margin: 10px;
+  text-align: center;
+}
+
+/* post item */
+.latest-post-title {
+  font-weight: 100;
+  font-size: 1.4em;
+  color: rgb(27, 24, 24);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.post-container {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.post-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  margin: 10px;
+  position: relative;
+}
+
+.post-item-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.post-item-content h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000;
+  margin: 10px;
+  text-align: left;
+}
+
+.post-item-content p {
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #000;
+  text-align: left;
+}
+
+.post-item-wrapper button {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px;
+}
+
+.user-avatar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user-avatar-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.category {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+}
+
+.btn-1 {
+  background-color: red;
+  color: white;
+}
+
+.btn-2 {
+  background-color: rgb(242, 255, 0);
+  color: rgb(12, 10, 10);
+}
+
+.btn-3 {
+  background-color: rgb(77, 255, 0);
+  color: black;
+}
+
+.btn-4 {
+  background-color: rgb(255, 0, 183);
+  color: white;
+}
+
+.btn-5 {
+  background-color: rgb(21, 0, 255);
+  color: white;
+}
+
+.btn-6 {
+  background-color: rgb(255, 106, 0);
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  header.container h1 {
+    font-size: 3.1em;
+  }
+  header.container {
+    margin-top: -60px;
+  }
+  header.container p {
+    margin-top: -10px;
+  }
+
+  /* Navbar */
+  .navbar-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .nav-header {
+    width: 100%;
+  }
+  .toggle {
+    display: block;
+    cursor: pointer;
+  }
+  .toggle i {
+    font-size: 1.5em;
+  }
+  .nav-link {
+    display: none;
+  }
+  .navbar-container {
+    min-height: 150px;
+  }
+  .nav-left {
+    flex-direction: column;
+  }
+  .nav-link {
+    padding-top: 10px;
+  }
+  .nav-items {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .active {
+    display: block;
+  }
+}

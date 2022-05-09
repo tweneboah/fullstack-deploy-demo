@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/42a182743f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../public/css/navbar.css" />
+    <link rel="stylesheet" href="../../public/css/profile.css" />
+
+    <title>Profile</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <!-- check if user is login -->
+    <%if(authUser){%> <%-include('../partials/privateNav.ejs')%> <%}else{%>
+    <%-include('../partials/navbar.ejs')%> <% }%>
+    <!-- end navbar -->
+
+    <!-- header -->
+
+    <!-- header -->
+    <header class="profile-header-container">
+      <div class="bg-img-container"></div>
+    </header>
+
+    <!-- profile details -->
+
+    <div class="profile-details-content">
+      <div class="profile-details-img">
+        <img src="<%=user.profileImage%> " alt="profile-img" />
+      </div>
+      <div class="profile-details-info">
+        <h2><%=user.firstname%> <%=user.lastname%></h2>
+        <p>Email: <%=user.email%></p>
+        <p>Date Joined<%=user.createdAt%></p>
+        <div class="profile-details-info-btn">
+          <a href="/users/updateUser/<%=user._id%> ">
+            <button>Edit User</button>
+          </a>
+          <a href="/users/updatePassword/2323">
+            <button>Change Password</button>
+          </a>
+
+          <a href="/users/updatePhoto/2323">
+            <button>Update Profile Photo</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- post list -->
+    <!-- latest post title header -->
+    <section class="latest-post-title">
+      <h2>Latest Post</h2>
+    </section>
+    <!-- End of latest post title header -->
+
+    <!-- blog post grid -->
+    <section class="post-container">
+      <%user.posts.forEach((post)=>{ %>
+      <div class="post-item-wrapper">
+        <img src="<%=post.image%> " alt="" />
+        <div class="post-item-content">
+          <h3><%=post.title%></h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            at repellat, pariatur ad error iusto, quisquam voluptatum, quidem
+            quisquam.
+          </p>
+          <a href="/posts/<%=post.id%> ">Read more</a>
+        </div>
+      </div>
+      <% })%>
+    </section>
+  </body>
+</html>

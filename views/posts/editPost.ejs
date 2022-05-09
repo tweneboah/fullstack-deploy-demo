@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/42a182743f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Roboto:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="../../public/css/createPost.css" />
+    <link rel="stylesheet" href="../../public/css/navbar.css" />
+    <title>CREATE POST</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <!-- check if user is login -->
+    <%if(authUser){%> <%-include('../partials/privateNav.ejs')%> <%}else{%>
+    <%-include('../partials/navbar.ejs')%> <% }%>
+    <!-- end navbar -->
+    <!-- Edit -->
+    <div class="form-container">
+      <h1>EDIT POST</h1>
+
+      <div class="create-post-icon">
+        <i class="fas fa-angle-double-up"></i>
+      </div>
+      <!-- display -->
+      <div style="color: red; margin-bottom: 10px"><%=error%></div>
+      <form
+        enctype="multipart/form-data"
+        method="post"
+        action="/posts/edit/<%=post.id%> "
+        class="create-post"
+      >
+        <div class="create-post-form-input">
+          <label for="">Title</label>
+          <input name="title" type="text" value="<%=post.title%> " />
+        </div>
+
+        <div class="create-post-form-input">
+          <label for="">Select Category</label>
+          <select name="category">
+            <option value="react js">react js</option>
+            <option value="html">html</option>
+            <option value="css">css</option>
+            <option value="node js">node js</option>
+            <option value="javascript">javascript</option>
+            <option value="other">other</option>
+          </select>
+        </div>
+
+        <div class="create-post-form-input">
+          <label for="">Description</label>
+          <textarea name="description" cols="30" rows="10">
+           <%=post.description%> 
+          </textarea>
+        </div>
+
+        <div class="create-post-form-input">
+          <label for="">Upload Image</label>
+          <input name="image" type="file" class="upload-file" />
+        </div>
+        <div class="create-post-form-input">
+          <button type="submit">EDIT POST</button>
+        </div>
+      </form>
+    </div>
+    <!--end register -->
+  </body>
+</html>

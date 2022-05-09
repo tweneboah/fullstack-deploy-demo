@@ -1,0 +1,139 @@
+/* rerset browser default styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: "Roboto", sans-serif;
+}
+
+.all-post-header-container {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #e5e5e5;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* post item */
+.latest-post-title {
+  font-weight: 100;
+  font-size: 1.4em;
+  color: rgb(27, 24, 24);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.post-container {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.post-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  margin: 10px;
+  position: relative;
+}
+
+.post-item-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.post-item-content h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000;
+  margin: 10px;
+  text-align: left;
+}
+
+.post-item-content p {
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #000;
+  text-align: left;
+}
+
+.post-item-wrapper button {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px;
+}
+
+.user-avatar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user-avatar-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.category {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+}
+
+.btn-1 {
+  background-color: red;
+  color: white;
+}
+
+.btn-2 {
+  background-color: rgb(242, 255, 0);
+  color: rgb(12, 10, 10);
+}
+
+.btn-3 {
+  background-color: rgb(77, 255, 0);
+  color: black;
+}
+
+.btn-4 {
+  background-color: rgb(255, 0, 183);
+  color: white;
+}
+
+.btn-5 {
+  background-color: rgb(21, 0, 255);
+  color: white;
+}
+
+.btn-6 {
+  background-color: rgb(255, 106, 0);
+  color: white;
+}

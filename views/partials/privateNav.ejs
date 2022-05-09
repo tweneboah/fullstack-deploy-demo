@@ -1,0 +1,40 @@
+<nav class="navbar-container">
+  <!-- list 1 logo -->
+  <ul class="nav-header">
+    <li class="logo">
+      <a href="/">
+        <i class="fab fa-500px"></i>
+      </a>
+    </li>
+    <li class="toggle">
+      <i class="fas fa-bars"></i>
+    </li>
+  </ul>
+  <!-- list 2 links -->
+  <ul class="nav-items">
+    <li class="nav-link">
+      <a href="/posts">Posts</a>
+    </li>
+
+    <li class="nav-link">
+      <a href="/posts/createPost">New Post</a>
+    </li>
+    <!-- <li class="nav-link">
+        <a href="./pages/profile.html">Profile</a>
+      </li> -->
+  </ul>
+  <!-- list 3 action -->
+  <ul class="nav-left">
+    <li class="nav-link register">
+      <a href="/users/profile/<%=authUser._id%> ">
+        <button>Profile</button>
+      </a>
+    </li>
+
+    <li class="nav-link register">
+      <a href="/users/logout">
+        <button>Logout</button>
+      </a>
+    </li>
+  </ul>
+</nav>

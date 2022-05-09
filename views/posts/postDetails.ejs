@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/42a182743f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../public/css/postDetails.css" />
+    <link rel="stylesheet" href="../../public/css/navbar.css" />
+    <title>Post Details</title>
+  </head>
+  <body>
+    <!-- check if user is login -->
+    <%if(authUser){%> <%-include('../partials/privateNav.ejs')%> <%}else{%>
+    <%-include('../partials/navbar.ejs')%> <% }%>
+    <!-- post container -->
+
+    <section class="post-details-wrapper">
+      <div class="post-details-content">
+        <!-- post image -->
+        <img class="post-image" src="<%=post.image %> " alt="post" />
+
+        <h2><%=post.title %></h2>
+        <!-- user -->
+        <div class="user-avatar-container">
+          <img src="<%=post.user.profileImage %>  " alt="user" />
+          <p><%=post.user.firstname%> <%=post.user.lastname%></p>
+          <p><%=post.createdAt%></p>
+        </div>
+
+        <!-- actions -->
+        <div class="actions-container">
+          <%if(authUser?._id?.toString() === post?.user?._id?.toString() ){%>
+          <a href="/posts/edit-form/<%=post.id%> ">
+            <button class="edit-btn">Edit</button>
+          </a>
+
+          <a href="/posts/delete/<%=post._id %> ">
+            <button class="delete-btn">Delete</button>
+          </a>
+          <% } %>
+
+          <a href="/comment-form/<%=post._id%> ">
+            <button class="add-comment-btn">Add Comment</button>
+          </a>
+        </div>
+        <!-- content-->
+        <p><%=post.description %></p>
+      </div>
+
+      <!-- comments list -->
+      <h1>Comments (<%=post.comments.length%> )</h1>
+      <div class="comment-wrapper">
+        <%post.comments.forEach((comment) =>{ %>
+        <!-- user -->
+        <div class="user-container">
+          <img src="<%=comment.user.profileImage%> " alt="comment user" />
+          <p><%=comment.user.fullname%></p>
+          <p style="margin: 10px"><%=comment.createdAt%></p>
+        </div>
+        <p class="content"><%=comment.msg%></p>
+        <% })%>
+      </div>
+    </section>
+  </body>
+</html>

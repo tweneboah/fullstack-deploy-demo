@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/42a182743f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="../../public/css/allPost.css" />
+    <link rel="stylesheet" href="../../public/css/navbar.css" />
+    <title>Post List</title>
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <!-- check if user is login -->
+    <%if(authUser){%> <%-include('../partials/privateNav.ejs')%> <%}else{%>
+    <%-include('../partials/navbar.ejs')%> <% }%>
+    <!-- end navbar -->
+    <!-- header title -->
+    <div class="all-post-header-container">
+      <h1>All Posts (<%=total%> )</h1>
+      <p>View our latest post from our creators</p>
+    </div>
+    <!--end header title -->
+
+    <!-- blog post grid -->
+
+    <section class="post-container">
+      <!-- item 1 -->
+
+      <% posts.forEach((post)=>{ %>
+      <div class="post-item-wrapper">
+        <img src="<%=post.image%> " alt="post-item-img" />
+        <div class="post-item-content">
+          <h3><%=post.title%></h3>
+          <!-- user avatar -->
+          <div class="user-avatar-container">
+            <img src="<%=post.user.profileImage%>  " alt="user" />
+            <p><%=post.user.firstname%> <%=post.user.lastname%></p>
+            <p><%=post.createdAt%></p>
+          </div>
+          <!-- end user avatar -->
+          <p><%=post.description%></p>
+
+          <button>
+            <a href="/posts/<%=post.id%> ">Read more</a>
+          </button>
+          <div class="category">
+            <button class="btn-1"><%=post.category%></button>
+          </div>
+        </div>
+      </div>
+      <%}) %>
+    </section>
+    <!-- end post grid -->
+  </body>
+</html>

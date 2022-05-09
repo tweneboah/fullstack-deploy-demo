@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../public/css/commentForm.css" />
+    <script src="https://kit.fontawesome.com/1c97a9b182.js" crossorigin="anonymous"></script>
+    <title>Comment</title>
+  </head>
+  <body>
+    <!-- login page -->
+    <div class="form-container">
+    <h3>You are add comment to...</h3>
+    <form action="/comments/<%=id%> " method="post" class="login">
+      <div class="login-form-input">
+        <textarea name="msg" id="" cols="30" rows="10" placeholder="Leave a comment"></textarea>
+      </div>
+      <div class="login-form-input">
+        <button type="submit">Add Comment</button>
+      </div>
+    </div>
+  </body>
+</html>

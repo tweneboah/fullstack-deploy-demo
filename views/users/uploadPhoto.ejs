@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/register.css" />
+    <script src="https://kit.fontawesome.com/42a182743f.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="../../public/css/register.css">
+    <link rel="stylesheet" href="../../public/css/navbar.css">
+    <title>Upload Photo</title>
+  </head>
+  <body>
+ <!-- navbar -->
+  <!-- check if user is login -->
+  <%if(authUser){%> <%-include('../partials/privateNav.ejs')%> <%}else{%>
+    <%-include('../partials/navbar.ejs')%> <% }%>
+ <!-- end navbar -->
+    <!-- Register page -->
+    <div class="form-container">
+    <h1>Upload Photo</h1>
+    <!-- login icon -->
+    <div class="login-icon">
+      <i class="fas fa-user-plus"></i>
+    </div>
+      <!-- display error msg -->
+   <div style="color: red; margin-bottom: 10px; width: 500px; text-align: center;">
+  <%=error%> 
+    </div>
+    <form action="/users/updatePhoto/<%=authUser._id%> " method="post" class="register" enctype="multipart/form-data" >
+  
+      <div class="register-form-input">
+        <label for="password">Upload Proifile Photo</label>
+        <input type="file" name="profileImage"  />
+      </div>
+      <div class="register-form-input">
+        <button type="submit">Upload Photo</button>
+      </div>
+    </div>
+    <script src="./js/navbar.js"></script>
+  </body>
+</html>

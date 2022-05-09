@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Roboto:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/42a182743f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../public/css/main.css" />
+    <title>Blog App</title>
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <!-- check if user is login -->
+    <%if(authUser){%> <%-include('./partials/privateNav.ejs')%> <%}else{%>
+    <%-include('./partials/navbar.ejs')%> <% }%>
+    <!-- end navbar -->
+
+    <!-- hero banner -->
+    <header class="container">
+      <h1>Share what you have and read what you want</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur,
+        aspernatur.
+      </p>
+      <a href="/posts/createPost">
+        <button>CREATE NEW POST</button>
+      </a>
+    </header>
+    <!-- end hero banner -->
+
+    <!-- Latest post title -->
+    <section class="latest-post-title">
+      <h2>Latest Post</h2>
+    </section>
+    <!-- end Latest post title -->
+
+    <!-- blog post grid -->
+
+    <section class="post-container">
+      <% posts.forEach((post)=>{ %> <%console.log(post)%>
+      <!-- item 1 -->
+      <div class="post-item-wrapper">
+        <img src="<%=post.image%>" alt="post-item-img" />
+        <div class="post-item-content">
+          <h3><%=post.title%></h3>
+          <!-- user avatar -->
+          <div class="user-avatar-container">
+            <img src="<%=post.user.profileImage%>" alt="user" />
+            <p><%=post.user.firstname%> <%=post.user.lastname%></p>
+            <p><%=post.createdAt%></p>
+          </div>
+          <!-- end user avatar -->
+          <p><%=post.description%></p>
+
+          <button>
+            <a href="/posts/<%=post._id%>">Read more</a>
+          </button>
+          <div class="category">
+            <button class="btn-1"><%=post.category%></button>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </section>
+    <!-- end post grid -->
+
+    <!-- js goes here -->
+    <script src="./js/navbar.js"></script>
+  </body>
+</html>
