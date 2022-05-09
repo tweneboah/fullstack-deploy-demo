@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "Complete blog application",
   "main": "server.js",
+  "engines": {
+    "node": "v16.4.1",
+    "npm": "8.7.0"
+  },
   "scripts": {
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [
     "blog",
